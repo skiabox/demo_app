@@ -6,8 +6,8 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'sqlite3-ruby', '1.3.1', :require => 'sqlite3'
-
+gem 'sqlite3-ruby', '1.3.1', :group => :production
+# gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,4 +31,12 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+end
+
+group :production do
+  # gems specifically for Heroku go here
+ # gem 'activerecord-postgresql-adapter'
+ # gem 'therubyracer-heroku', '0.8.1.pre3'
+ gem 'therubyracer', '0.9.3.beta1'
+ gem 'pg'
 end
